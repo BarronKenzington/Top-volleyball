@@ -14,7 +14,7 @@ A single-page site for a volleyball college showcase: event info, attending scho
 Event date, time, location, and cost are filled in. One placeholder remains in `index.html`, marked with `[BRACKETS]`:
 
 - `[EVENT NAME]` — showcase name (appears in title, hero, and footer)
-- Registration buttons (`href="#"`) — replace with your real external registration links, one for athletes and one for coaches. There are two sets: in the hero and in the "Register" section at the bottom.
+- "Register as a Coach" / "Coach Registration" buttons (`href="#"`) — replace with your real external coach-registration link. "Register as an Athlete" / "Athlete Registration" already point to the Stripe purchase link ($100, T-shirt included).
 - Footer email (`info@example.com`) — replace with your contact address.
 
 ### School logos (carousel)
