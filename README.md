@@ -11,9 +11,8 @@ A single-page site for a volleyball college showcase: event info, attending scho
 
 ## What to customize
 
-Event date, time, location, and cost are filled in. One placeholder remains in `index.html`, marked with `[BRACKETS]`:
+Event name (Top Series), date, time, location, and cost are all filled in. What's left in `index.html`:
 
-- `[EVENT NAME]` — showcase name (appears in title, hero, and footer)
 - "Register as a Coach" / "Coach Registration" buttons (`href="#"`) — replace with your real external coach-registration link. "Register as an Athlete" / "Athlete Registration" already point to the Stripe purchase link ($100, T-shirt included).
 - Footer email (`info@example.com`) — replace with your contact address.
 
