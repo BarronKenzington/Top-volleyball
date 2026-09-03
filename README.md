@@ -11,11 +11,9 @@ A single-page site for a volleyball college showcase: event info, attending scho
 
 ## What to customize
 
-All placeholders are in `index.html`, marked with `[BRACKETS]`:
+Event date, time, location, and cost are filled in. One placeholder remains in `index.html`, marked with `[BRACKETS]`:
 
 - `[EVENT NAME]` — showcase name (appears in title, hero, and footer)
-- `[EVENT DATE]` — event date(s)
-- `[EVENT LOCATION]` — venue/city
 - Registration buttons (`href="#"`) — replace with your real external registration links, one for athletes and one for coaches. There are two sets: in the hero and in the "Register" section at the bottom.
 - Footer email (`info@example.com`) — replace with your contact address.
 
@@ -29,7 +27,7 @@ The "Schools Attending" section is an auto-scrolling logo carousel. To use real 
 4. To add or remove schools, add/remove one `.logo-item` in *both* sets, keeping the sets identical.
 5. To change scroll speed, edit `animation: scroll-logos 28s linear infinite;` in `css/style.css` (`.logo-track`) — a bigger number scrolls slower. Hovering over the carousel pauses it.
 
-Pricing ($80, T-shirt included) is already set in the "Registration Cost" section — edit `.price-includes` list items if what's included changes.
+Pricing ($100, T-shirt included) is already set in the "Registration Cost" section — edit `.price-includes` list items if what's included changes.
 
 ## Running locally
 
