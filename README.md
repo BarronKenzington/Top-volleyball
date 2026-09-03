@@ -28,6 +28,10 @@ The "Schools Attending" section is an auto-scrolling logo carousel. To use real 
 
 Pricing ($100, T-shirt included) is already set in the "Registration Cost" section — edit `.price-includes` list items if what's included changes.
 
+### Brand styling
+
+Palette and type are pulled from the official "Top Series Showcase" event flyer: a deep teal-black ground (`--ink`/`--ink-dark`), a gold accent (`--gold`/`--gold-dark`/`--gold-deep`), the display font **Anton** (bold condensed headings, matches the flyer's "SHOWCASE" wordmark) and **Kaushan Script** (the "Top Series" script logotype, used via the `.script-name` / `.logo-script` classes). To adjust the palette, edit the tokens at the top of `css/style.css`; to swap fonts, update the Google Fonts `<link>` in `index.html` and the `font-family` values in `css/style.css`.
+
 ## Running locally
 
 No build step required — just open `index.html` in a browser, or serve the folder:
