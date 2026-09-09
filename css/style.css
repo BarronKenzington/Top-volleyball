@@ -1,12 +1,15 @@
 :root {
-  --ink: #0e2624;
-  --ink-dark: #071615;
+  --ink: #0c262b;
+  --ink-dark: #051618;
   --gold: #c9952e;
   --gold-dark: #a97b22;
   --gold-deep: #8a660c;
   --off-white: #f6f4ef;
   --gray: #5c655f;
   --border: #e1e4de;
+  --silver-light: #ffffff;
+  --silver-mid: #d7dbdb;
+  --silver-dark: #a7b0b0;
   --radius: 12px;
   --max-width: 1100px;
   font-size: 16px;
@@ -84,8 +87,12 @@ a:focus-visible, button:focus-visible {
   font-family: 'Anton', sans-serif;
   font-size: 0.85rem;
   letter-spacing: 0.06em;
-  color: #fff;
   line-height: 1;
+  background: linear-gradient(180deg, var(--silver-light) 0%, var(--silver-mid) 45%, var(--silver-dark) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: var(--silver-mid);
+  -webkit-text-fill-color: transparent;
 }
 
 .nav {
@@ -128,7 +135,7 @@ a:focus-visible, button:focus-visible {
 .hero {
   background:
     radial-gradient(ellipse 70% 50% at 25% 15%, rgba(201,149,46,0.10), transparent 60%),
-    radial-gradient(ellipse 60% 45% at 75% 85%, rgba(120,180,170,0.10), transparent 60%),
+    radial-gradient(ellipse 60% 45% at 75% 85%, rgba(100,175,185,0.10), transparent 60%),
     linear-gradient(160deg, var(--ink) 0%, var(--ink-dark) 100%);
   color: #fff;
   padding: 96px 0 80px;
@@ -146,8 +153,12 @@ a:focus-visible, button:focus-visible {
 
 .hero h1 {
   font-size: clamp(2rem, 5vw, 3.2rem);
-  color: #fff;
   margin-bottom: 16px;
+  background: linear-gradient(180deg, var(--silver-light) 0%, var(--silver-mid) 45%, var(--silver-dark) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: var(--silver-mid);
+  -webkit-text-fill-color: transparent;
 }
 
 .hero h1 .script-name {
@@ -156,10 +167,12 @@ a:focus-visible, button:focus-visible {
   font-weight: 400;
   text-transform: none;
   letter-spacing: normal;
-  color: var(--gold);
   font-size: 1.3em;
   line-height: 1.1;
   margin-bottom: 0.1em;
+  background: none;
+  color: var(--gold);
+  -webkit-text-fill-color: var(--gold);
 }
 
 .hero-sub {
@@ -403,7 +416,13 @@ section h2 {
   text-align: center;
 }
 
-.register h2 { color: #fff; }
+.register h2 {
+  background: linear-gradient(180deg, var(--silver-light) 0%, var(--silver-mid) 45%, var(--silver-dark) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: var(--silver-mid);
+  -webkit-text-fill-color: transparent;
+}
 
 .register p {
   color: #cdd8d5;
