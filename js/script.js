@@ -12,3 +12,48 @@ nav.querySelectorAll('a').forEach((link) => {
     navToggle.setAttribute('aria-expanded', 'false');
   });
 });
+
+const galleryImages = Array.from(document.querySelectorAll('.gallery-item img'));
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightboxImg');
+const lightboxClose = document.getElementById('lightboxClose');
+const lightboxPrev = document.getElementById('lightboxPrev');
+const lightboxNext = document.getElementById('lightboxNext');
+let currentIndex = 0;
+
+function showImage(index) {
+  currentIndex = (index + galleryImages.length) % galleryImages.length;
+  const img = galleryImages[currentIndex];
+  lightboxImg.src = img.src;
+  lightboxImg.alt = img.alt;
+}
+
+function openLightbox(index) {
+  showImage(index);
+  lightbox.classList.add('open');
+  lightbox.setAttribute('aria-hidden', 'false');
+}
+
+function closeLightbox() {
+  lightbox.classList.remove('open');
+  lightbox.setAttribute('aria-hidden', 'true');
+}
+
+galleryImages.forEach((img, index) => {
+  img.addEventListener('click', () => openLightbox(index));
+});
+
+lightboxClose.addEventListener('click', closeLightbox);
+lightboxPrev.addEventListener('click', () => showImage(currentIndex - 1));
+lightboxNext.addEventListener('click', () => showImage(currentIndex + 1));
+
+lightbox.addEventListener('click', (event) => {
+  if (event.target === lightbox) closeLightbox();
+});
+
+document.addEventListener('keydown', (event) => {
+  if (!lightbox.classList.contains('open')) return;
+  if (event.key === 'Escape') closeLightbox();
+  if (event.key === 'ArrowLeft') showImage(currentIndex - 1);
+  if (event.key === 'ArrowRight') showImage(currentIndex + 1);
+});

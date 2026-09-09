@@ -8,6 +8,7 @@ A single-page site for a volleyball college showcase: event info, attending scho
 - `css/style.css` — styles
 - `js/script.js` — mobile nav toggle
 - `assets/logos/` — school logo images used in the carousel (currently placeholder badges)
+- `assets/photos/` — hero background photo and gallery photos (not yet uploaded — see "Photos" below)
 
 ## What to customize
 
@@ -27,6 +28,35 @@ The "Schools Attending" section is an auto-scrolling logo carousel. To use real 
 5. To change scroll speed, edit `animation: scroll-logos 28s linear infinite;` in `css/style.css` (`.logo-track`) — a bigger number scrolls slower. Hovering over the carousel pauses it.
 
 Pricing ($100, T-shirt included) is already set in the "Registration Cost" section — edit `.price-includes` list items if what's included changes.
+
+### Photos (hero background + gallery)
+
+The hero background and the "Gallery" section both expect real photo files
+that aren't in the repo yet — until they're uploaded, the hero falls back
+to the plain teal gradient and gallery tiles show as empty tinted boxes.
+
+**Filenames expected** (drop files into `assets/photos/` with these exact names):
+
+- `hero-collage.jpg` — used as the hero section's background image
+- `gallery-1.jpg` through `gallery-12.jpg` — the 12 tiles in the Gallery section
+
+**Before uploading, resize/compress** (GitHub's web upload caps at 25MB/file,
+and full-resolution photos slow the page down for no visual benefit at web
+sizes):
+
+- Hero photo: resize to ~1600–2000px on the long edge, export as JPEG at
+  ~80% quality (target under ~1MB)
+- Gallery photos: resize to ~1200px on the long edge, JPEG at ~75–80%
+  quality (target under ~400–500KB each — with 12 photos that keeps total
+  page weight reasonable)
+
+Any photo editor's "export"/"resize" option works, or a free tool like
+[Squoosh](https://squoosh.app).
+
+**To add more gallery photos later:** upload the next sequential
+`gallery-N.jpg`, then in `index.html` duplicate one `.gallery-item` block
+inside `.gallery-grid`, bumping the filename, `alt` text, and `data-index`
+(next sequential number) to match.
 
 ### Brand styling
 

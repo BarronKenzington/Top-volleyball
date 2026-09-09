@@ -18,6 +18,7 @@
     <nav class="nav" id="nav">
       <a href="#about">About</a>
       <a href="#schools">Schools</a>
+      <a href="#gallery">Gallery</a>
       <a href="#pricing">Pricing</a>
       <a href="#register">Register</a>
     </nav>
@@ -113,6 +114,27 @@
     </div>
   </section>
 
+  <section class="gallery" id="gallery">
+    <div class="container">
+      <h2>Gallery</h2>
+      <p class="section-sub">Moments from past showcases.</p>
+      <div class="gallery-grid">
+        <div class="gallery-item"><img src="assets/photos/gallery-1.jpg" alt="Showcase photo 1" loading="lazy" data-index="0"></div>
+        <div class="gallery-item"><img src="assets/photos/gallery-2.jpg" alt="Showcase photo 2" loading="lazy" data-index="1"></div>
+        <div class="gallery-item"><img src="assets/photos/gallery-3.jpg" alt="Showcase photo 3" loading="lazy" data-index="2"></div>
+        <div class="gallery-item"><img src="assets/photos/gallery-4.jpg" alt="Showcase photo 4" loading="lazy" data-index="3"></div>
+        <div class="gallery-item"><img src="assets/photos/gallery-5.jpg" alt="Showcase photo 5" loading="lazy" data-index="4"></div>
+        <div class="gallery-item"><img src="assets/photos/gallery-6.jpg" alt="Showcase photo 6" loading="lazy" data-index="5"></div>
+        <div class="gallery-item"><img src="assets/photos/gallery-7.jpg" alt="Showcase photo 7" loading="lazy" data-index="6"></div>
+        <div class="gallery-item"><img src="assets/photos/gallery-8.jpg" alt="Showcase photo 8" loading="lazy" data-index="7"></div>
+        <div class="gallery-item"><img src="assets/photos/gallery-9.jpg" alt="Showcase photo 9" loading="lazy" data-index="8"></div>
+        <div class="gallery-item"><img src="assets/photos/gallery-10.jpg" alt="Showcase photo 10" loading="lazy" data-index="9"></div>
+        <div class="gallery-item"><img src="assets/photos/gallery-11.jpg" alt="Showcase photo 11" loading="lazy" data-index="10"></div>
+        <div class="gallery-item"><img src="assets/photos/gallery-12.jpg" alt="Showcase photo 12" loading="lazy" data-index="11"></div>
+      </div>
+    </div>
+  </section>
+
   <section class="pricing" id="pricing">
     <div class="container">
       <h2>Registration Cost</h2>
@@ -145,6 +167,13 @@
     <p><a href="mailto:info@example.com">info@example.com</a></p>
   </div>
 </footer>
+
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+  <button class="lightbox-prev" id="lightboxPrev" aria-label="Previous photo">&#8249;</button>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="">
+  <button class="lightbox-next" id="lightboxNext" aria-label="Next photo">&#8250;</button>
+</div>
 
 <script src="js/script.js"></script>
 </body>
