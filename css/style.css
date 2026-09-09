@@ -1,6 +1,6 @@
 :root {
-  --ink: #0c262b;
-  --ink-dark: #051618;
+  --ink: #164047;
+  --ink-dark: #0a2226;
   --gold: #c9952e;
   --gold-dark: #a97b22;
   --gold-deep: #8a660c;
@@ -134,8 +134,8 @@ a:focus-visible, button:focus-visible {
 /* Hero */
 .hero {
   background:
-    radial-gradient(ellipse 70% 50% at 25% 15%, rgba(201,149,46,0.10), transparent 60%),
-    radial-gradient(ellipse 60% 45% at 75% 85%, rgba(100,175,185,0.10), transparent 60%),
+    radial-gradient(ellipse 70% 50% at 25% 15%, rgba(201,149,46,0.14), transparent 60%),
+    radial-gradient(ellipse 60% 45% at 75% 85%, rgba(100,175,185,0.16), transparent 60%),
     linear-gradient(160deg, var(--ink) 0%, var(--ink-dark) 100%);
   color: #fff;
   padding: 96px 0 80px;
