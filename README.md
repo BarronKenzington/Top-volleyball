@@ -8,13 +8,14 @@ A single-page site for a volleyball college showcase: event info, attending scho
 - `css/style.css` — styles
 - `js/script.js` — mobile nav toggle
 - `assets/logos/` — school logo images used in the carousel (currently placeholder badges)
-- `assets/photos/` — hero background photo and gallery photos (not yet uploaded — see "Photos" below)
+- `assets/photos/` — hero background photo (not yet uploaded) and gallery photos (10 in place — see "Photos" below)
 
 ## What to customize
 
-Event name (Top Series), date, time, location, and cost are all filled in. What's left in `index.html`:
+Event name (Top Series), date, time, location, cost, and both registration
+links (Stripe for athletes, Google Form for coaches) are all filled in.
+What's left in `index.html`:
 
-- "Register as a Coach" / "Coach Registration" buttons (`href="#"`) — replace with your real external coach-registration link. "Register as an Athlete" / "Athlete Registration" already point to the Stripe purchase link ($100, T-shirt included).
 - Footer email (`info@example.com`) — replace with your contact address.
 
 ### School logos (carousel)
