@@ -19,6 +19,16 @@ Event name (Top Series), date, time, location, and cost are all filled in. What'
 
 ### School logos (carousel)
 
+**Currently disabled** — the "Schools Attending" section only had placeholder
+logos, so it's hidden for now (both the section and its nav link are
+commented out / marked `hidden` in `index.html`, not deleted). To turn it
+back on once you have real logos:
+
+1. In `index.html`, remove the `hidden` attribute from
+   `<section class="schools" id="schools" hidden>`, and uncomment the nav
+   link (`<!-- <a href="#schools">Schools</a> -->`).
+2. Then follow the steps below to swap in real logos.
+
 The "Schools Attending" section is an auto-scrolling logo carousel. To use real logos:
 
 1. Drop each school's logo into `assets/logos/` (transparent PNG or SVG works best; roughly square, at least 200×200px so it stays sharp).
