@@ -41,20 +41,26 @@ Pricing ($100, T-shirt included) is already set in the "Registration Cost" secti
 
 ### Photos (hero background + gallery)
 
-Gallery has 3 real photos in place (`assets/photos/gallery-1.jpg`,
-`gallery-2.jpg`, `gallery-3.jpg`). The hero background photo
-(`hero-collage.jpg`) is still missing — until it's uploaded, the hero
-falls back to the plain teal gradient.
+Gallery has 9 real photos in place (`assets/photos/gallery-1.jpg` through
+`gallery-9.jpg`). The hero background photo (`hero-collage.jpg`) is still
+missing — until it's uploaded, the hero falls back to the plain teal
+gradient.
 
 **Filenames expected** (drop files into `assets/photos/` with these exact names):
 
 - `hero-collage.jpg` — used as the hero section's background image (not yet uploaded)
-- `gallery-1.jpg`, `gallery-2.jpg`, `gallery-3.jpg` — done
+- `gallery-1.jpg` through `gallery-9.jpg` — done
+
+**Important — upload straight into `assets/photos/`:** the first batch of
+gallery photos landed in the wrong folder (`assets/logos/`, and one in the
+repo root) since GitHub's upload UI defaults to whatever folder you last
+viewed — double check you're inside `assets/photos/` before clicking
+"Add file → Upload files".
 
 **Before uploading, resize/compress** (GitHub's web upload caps at 25MB/file,
 and full-resolution photos slow the page down for no visual benefit at web
-sizes — the first 3 gallery photos came in at 11–19MB each and were resized
-down to ~120–160KB with no visible quality loss):
+sizes — the 9 gallery photos came in at 4–21MB each and were resized down
+to ~85–230KB with no visible quality loss):
 
 - Hero photo: resize to ~1600–2000px on the long edge, export as JPEG at
   ~80% quality (target under ~1MB)
