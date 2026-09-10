@@ -41,24 +41,25 @@ Pricing ($100, T-shirt included) is already set in the "Registration Cost" secti
 
 ### Photos (hero background + gallery)
 
-The hero background and the "Gallery" section both expect real photo files
-that aren't in the repo yet — until they're uploaded, the hero falls back
-to the plain teal gradient and gallery tiles show as empty tinted boxes.
+Gallery has 3 real photos in place (`assets/photos/gallery-1.jpg`,
+`gallery-2.jpg`, `gallery-3.jpg`). The hero background photo
+(`hero-collage.jpg`) is still missing — until it's uploaded, the hero
+falls back to the plain teal gradient.
 
 **Filenames expected** (drop files into `assets/photos/` with these exact names):
 
-- `hero-collage.jpg` — used as the hero section's background image
-- `gallery-1.jpg` through `gallery-12.jpg` — the 12 tiles in the Gallery section
+- `hero-collage.jpg` — used as the hero section's background image (not yet uploaded)
+- `gallery-1.jpg`, `gallery-2.jpg`, `gallery-3.jpg` — done
 
 **Before uploading, resize/compress** (GitHub's web upload caps at 25MB/file,
 and full-resolution photos slow the page down for no visual benefit at web
-sizes):
+sizes — the first 3 gallery photos came in at 11–19MB each and were resized
+down to ~120–160KB with no visible quality loss):
 
 - Hero photo: resize to ~1600–2000px on the long edge, export as JPEG at
   ~80% quality (target under ~1MB)
 - Gallery photos: resize to ~1200px on the long edge, JPEG at ~75–80%
-  quality (target under ~400–500KB each — with 12 photos that keeps total
-  page weight reasonable)
+  quality (target under ~150–200KB each)
 
 Any photo editor's "export"/"resize" option works, or a free tool like
 [Squoosh](https://squoosh.app).
