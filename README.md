@@ -70,10 +70,28 @@ down to ~85–230KB with no visible quality loss):
 Any photo editor's "export"/"resize" option works, or a free tool like
 [Squoosh](https://squoosh.app).
 
+**Gallery display:** like the school logo carousel, the Gallery section is
+an auto-scrolling, full-bleed carousel with no visible on-screen heading
+(there's a visually-hidden `<h2>Gallery</h2>` for screen readers only).
+Click any photo to open it in the lightbox; hovering pauses the scroll.
+
+**Important:** just like the logo carousel, the gallery track is built from
+two identical, back-to-back copies of the photo list (marked with an HTML
+comment in `index.html`) so the scroll loop is seamless. The duplicate
+set's `alt` attributes are intentionally empty (`aria-hidden="true"`) —
+screen readers only need each photo once, and the lightbox JS in
+`js/script.js` de-dupes by the `data-index` attribute so clicking either
+copy of a photo always opens the correct one with its real `alt` text.
+
 **To add more gallery photos later:** upload the next sequential
-`gallery-N.jpg`, then in `index.html` duplicate one `.gallery-item` block
-inside `.gallery-grid`, bumping the filename, `alt` text, and `data-index`
-(next sequential number) to match.
+`gallery-N.jpg`, then in `index.html` add one `.gallery-item` block to
+*both* sets (original and duplicate) inside `.gallery-track`, with the next
+sequential filename, `alt` text, and `data-index` — matching how the logo
+carousel is extended.
+
+**To change the gallery's scroll speed:** edit `animation: scroll-gallery
+55s linear infinite;` in `css/style.css` (`.gallery-track`) — a bigger
+number scrolls slower.
 
 ### Brand styling
 

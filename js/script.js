@@ -13,7 +13,15 @@ nav.querySelectorAll('a').forEach((link) => {
   });
 });
 
-const galleryImages = Array.from(document.querySelectorAll('.gallery-item img'));
+const galleryTrackImages = Array.from(document.querySelectorAll('.gallery-item img'));
+// The carousel duplicates each photo (for the seamless scroll loop), so
+// de-dupe by data-index to get the real, ordered list of unique photos.
+const galleryImages = [];
+galleryTrackImages.forEach((img) => {
+  const idx = Number(img.dataset.index);
+  if (!galleryImages[idx]) galleryImages[idx] = img;
+});
+
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightboxImg');
 const lightboxClose = document.getElementById('lightboxClose');
@@ -39,8 +47,8 @@ function closeLightbox() {
   lightbox.setAttribute('aria-hidden', 'true');
 }
 
-galleryImages.forEach((img, index) => {
-  img.addEventListener('click', () => openLightbox(index));
+galleryTrackImages.forEach((img) => {
+  img.addEventListener('click', () => openLightbox(Number(img.dataset.index)));
 });
 
 lightboxClose.addEventListener('click', closeLightbox);

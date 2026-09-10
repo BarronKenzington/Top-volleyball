@@ -117,10 +117,9 @@
   </section>
 
   <section class="gallery" id="gallery">
-    <div class="container">
-      <h2>Gallery</h2>
-      <p class="section-sub">Moments from past showcases.</p>
-      <div class="gallery-grid">
+    <h2 class="visually-hidden">Gallery</h2>
+    <div class="gallery-carousel">
+      <div class="gallery-track">
         <div class="gallery-item"><img src="assets/photos/gallery-1.jpg" alt="Showcase photo 1" loading="lazy" data-index="0"></div>
         <div class="gallery-item"><img src="assets/photos/gallery-2.jpg" alt="Showcase photo 2" loading="lazy" data-index="1"></div>
         <div class="gallery-item"><img src="assets/photos/gallery-3.jpg" alt="Showcase photo 3" loading="lazy" data-index="2"></div>
@@ -131,6 +130,17 @@
         <div class="gallery-item"><img src="assets/photos/gallery-8.jpg" alt="Showcase photo 8" loading="lazy" data-index="7"></div>
         <div class="gallery-item"><img src="assets/photos/gallery-9.jpg" alt="Showcase photo 9" loading="lazy" data-index="8"></div>
         <div class="gallery-item"><img src="assets/photos/gallery-10.jpg" alt="Showcase photo 10" loading="lazy" data-index="9"></div>
+        <!-- Duplicate set — required for the seamless scroll loop. Keep in sync with the set above. -->
+        <div class="gallery-item" aria-hidden="true"><img src="assets/photos/gallery-1.jpg" alt="" loading="lazy" data-index="0"></div>
+        <div class="gallery-item" aria-hidden="true"><img src="assets/photos/gallery-2.jpg" alt="" loading="lazy" data-index="1"></div>
+        <div class="gallery-item" aria-hidden="true"><img src="assets/photos/gallery-3.jpg" alt="" loading="lazy" data-index="2"></div>
+        <div class="gallery-item" aria-hidden="true"><img src="assets/photos/gallery-4.jpg" alt="" loading="lazy" data-index="3"></div>
+        <div class="gallery-item" aria-hidden="true"><img src="assets/photos/gallery-5.jpg" alt="" loading="lazy" data-index="4"></div>
+        <div class="gallery-item" aria-hidden="true"><img src="assets/photos/gallery-6.jpg" alt="" loading="lazy" data-index="5"></div>
+        <div class="gallery-item" aria-hidden="true"><img src="assets/photos/gallery-7.jpg" alt="" loading="lazy" data-index="6"></div>
+        <div class="gallery-item" aria-hidden="true"><img src="assets/photos/gallery-8.jpg" alt="" loading="lazy" data-index="7"></div>
+        <div class="gallery-item" aria-hidden="true"><img src="assets/photos/gallery-9.jpg" alt="" loading="lazy" data-index="8"></div>
+        <div class="gallery-item" aria-hidden="true"><img src="assets/photos/gallery-10.jpg" alt="" loading="lazy" data-index="9"></div>
       </div>
     </div>
   </section>
