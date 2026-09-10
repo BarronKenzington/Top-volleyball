@@ -575,6 +575,8 @@ section h2 {
 
   .nav-toggle { display: flex; }
 
+  .about-grid { grid-template-columns: 1fr; }
+
   .hero { padding: 64px 0 56px; }
 
   section { padding: 56px 0; }
