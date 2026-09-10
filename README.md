@@ -14,9 +14,7 @@ A single-page site for a volleyball college showcase: event info, attending scho
 
 Event name (Top Series), date, time, location, cost, and both registration
 links (Stripe for athletes, Google Form for coaches) are all filled in.
-What's left in `index.html`:
-
-- Footer email (`info@example.com`) — replace with your contact address.
+Footer email is set to `mattb@millcityvolleyball.com`.
 
 ### School logos (carousel)
 
