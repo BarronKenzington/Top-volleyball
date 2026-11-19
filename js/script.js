@@ -69,8 +69,12 @@ document.addEventListener('keydown', (event) => {
 // Live "Schools Attending" roster, pulled from the coach-registration
 // Google Sheet. The sheet must stay shared as "Anyone with the link —
 // Viewer" for this public CSV export to work with no login.
+// Using the gviz/tq endpoint (not /export?format=csv) because Google does
+// not send CORS headers on /export — a cross-origin fetch() to it fails
+// silently in the browser even though the URL works fine when visited
+// directly. gviz/tq is the documented workaround for client-side fetches.
 const SCHOOLS_SHEET_CSV_URL =
-  'https://docs.google.com/spreadsheets/d/15v9dF4NC7_vXxavY_G7fQtKBKfDA-fmzP0ufJ1prKVY/export?format=csv&gid=356780953';
+  'https://docs.google.com/spreadsheets/d/15v9dF4NC7_vXxavY_G7fQtKBKfDA-fmzP0ufJ1prKVY/gviz/tq?tqx=out:csv&gid=356780953';
 const SCHOOLS_COLUMN_HEADER = 'Colleges Attending';
 const SCHOOLS_REFRESH_MS = 5 * 60 * 1000;
 const SCHOOLS_SCROLL_PX_PER_SECOND = 45;
@@ -131,9 +135,20 @@ async function loadSchoolsCarousel() {
     if (rows.length < 2) throw new Error('No data rows in sheet');
 
     const headers = rows[0].map((h) => h.trim());
-    const columnIndex = headers.indexOf(SCHOOLS_COLUMN_HEADER);
+    const normalize = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+    const target = normalize(SCHOOLS_COLUMN_HEADER);
+    let columnIndex = headers.findIndex((h) => normalize(h) === target);
     if (columnIndex === -1) {
-      throw new Error('Column "' + SCHOOLS_COLUMN_HEADER + '" not found');
+      columnIndex = headers.findIndex((h) => {
+        const n = normalize(h);
+        return n.includes('college') && n.includes('attend');
+      });
+    }
+    if (columnIndex === -1) {
+      throw new Error(
+        'Column "' + SCHOOLS_COLUMN_HEADER + '" not found. Sheet headers were: ' +
+          JSON.stringify(headers)
+      );
     }
 
     const seen = new Set();
