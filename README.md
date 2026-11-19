@@ -6,7 +6,7 @@ A single-page site for a volleyball college showcase: event info, attending scho
 
 - `index.html` — page content/sections
 - `css/style.css` — styles
-- `js/script.js` — mobile nav toggle, lightbox, and the live Schools Attending fetch (see below)
+- `js/script.js` — mobile nav toggle, lightbox, and the Schools Attending carousel (see below)
 - `assets/photos/` — hero background photo (not yet uploaded) and gallery photos (10 in place — see "Photos" below)
 
 ## What to customize
@@ -15,43 +15,27 @@ Event name (Top Series), date, time, location, cost, and both registration
 links (Stripe for athletes, Google Form for coaches) are all filled in.
 Footer email is set to `mattb@millcityvolleyball.com`.
 
-### Schools Attending (live from the coach-registration sheet)
+### Schools Attending
 
-Instead of a fixed list of school logos, the "Schools Attending" carousel
-is populated live, in the visitor's browser, from the **Colleges
-Attending** column of the coach-registration Google Sheet (the same sheet
-the Google Form coaches fill out feeds into):
-`https://docs.google.com/spreadsheets/d/15v9dF4NC7_vXxavY_G7fQtKBKfDA-fmzP0ufJ1prKVY/edit?gid=356780953`
+The "Schools Attending" carousel is a static, hand-maintained list of
+school names — no logos, no live data fetching. The names live in the
+`SCHOOL_NAMES` array at the top of `js/script.js`:
 
-How it works (all in `js/script.js`, `loadSchoolsCarousel()`):
+```js
+const SCHOOL_NAMES = [
+  'St John Fisher University',
+  'Muhlenberg College',
+  // ...
+];
+```
 
-1. On page load (and again every 5 minutes, for anyone who leaves the tab
-   open), it fetches the sheet's public CSV export —
-   `.../export?format=csv&gid=356780953` — no login or API key, since the
-   sheet is shared as "Anyone with the link — Viewer."
-2. It finds the **Colleges Attending** column by header name, collects
-   every non-blank value, and de-duplicates it (so 3 coaches from the
-   same school only show up once), keeping first-seen order.
-3. It builds the scrolling chips from that list — same carousel mechanics
-   as the gallery (two identical back-to-back sets for a seamless loop,
-   `aria-hidden` on the duplicate set), but as text pills (`.school-chip`)
-   instead of images. Scroll speed is computed from the list's total
-   width so it always feels the same pace regardless of how many schools
-   are in it.
-4. The section (and its nav link) start `hidden` in the HTML and only get
-   un-hidden once real names load — if the sheet is ever made private,
-   renamed, or the column header changes, the section just stays hidden
-   instead of showing broken/empty.
-
-**If this stops working:**
-- Make sure the sheet is still shared as "Anyone with the link — Viewer." If it's switched to private, the fetch will fail and the section will silently stay hidden.
-- Make sure the column header in row 1 is still exactly `Colleges Attending` (matching `SCHOOLS_COLUMN_HEADER` in `js/script.js`) — if the form/sheet owner renames that column, update the constant to match.
-- If the sheet's URL or tab (`gid`) ever changes, update `SCHOOLS_SHEET_CSV_URL` in `js/script.js` to match.
-- Open the browser console on the live site — a failed fetch logs `"Schools carousel: could not load live roster."` with the underlying error.
-
-The old placeholder logo-based carousel markup has been fully replaced,
-not just hidden behind a flag — if logos are wanted again later instead
-of (or alongside) live names, that's a new build, not a toggle.
+**To add, remove, or rename a school:** edit that array and push the
+change — that's the only step. `renderSchoolsCarousel()` builds the
+scrolling chips from it automatically (two identical back-to-back sets
+for a seamless loop, same carousel mechanics as the gallery, text pills
+via `.school-chip` instead of images) and recalculates the scroll speed
+so it always feels the same pace regardless of how many schools are in
+the list.
 
 Pricing ($100, T-shirt included) is already set in the "Registration Cost" section — edit `.price-includes` list items if what's included changes.
 

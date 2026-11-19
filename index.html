@@ -17,7 +17,7 @@
     <a href="#top" class="logo"><span class="logo-script">Top Series</span><span class="logo-showcase">Showcase</span></a>
     <nav class="nav" id="nav">
       <a href="#about">About</a>
-      <a href="#schools" hidden>Schools</a>
+      <a href="#schools">Schools</a>
       <a href="#pricing">Pricing</a>
       <a href="#register">Register</a>
     </nav>
@@ -109,10 +109,9 @@
     </div>
   </section>
 
-  <!-- Populated live by js/script.js from the coach-registration Google Sheet.
-       Starts hidden; JS un-hides it once real names load, so a fetch failure
-       never shows an empty section. -->
-  <section class="schools" id="schools" hidden>
+  <!-- Chips are built by js/script.js from the SCHOOL_NAMES list — edit that
+       array to add/remove schools. -->
+  <section class="schools" id="schools">
     <div class="container">
       <h2>Schools Attending</h2>
       <p class="section-sub">College programs confirmed for this showcase.</p>
@@ -122,9 +121,6 @@
       <div class="logo-track" id="schoolsTrack"></div>
     </div>
 
-    <div class="container">
-      <p class="schools-note">School list updates automatically as coaches register.</p>
-    </div>
   </section>
 
   <section class="pricing" id="pricing">

@@ -367,13 +367,6 @@ section h2 {
   }
 }
 
-.schools-note {
-  text-align: center;
-  color: var(--gray);
-  font-size: 0.9rem;
-  margin: 32px 0 0;
-}
-
 .gallery {
   background: var(--off-white);
   padding: 40px 0;
